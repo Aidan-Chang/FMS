@@ -1,0 +1,93 @@
+@import '@fontsource-variable/material-symbols-outlined/index.css';
+@import "@fortawesome/fontawesome-free/css/all.css";
+@import "primeicons/primeicons.css";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Verdana", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  overflow: hidden;
+  a, a:link, a:visited, a:focus, a:hover, a:active {
+    text-decoration: none;
+  }
+}
+
+.mso {
+  font-family: 'Material Symbols Outlined Variable', sans-serif;
+  font-style: normal;
+  font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 64;
+}
+
+html.app-dark {
+  background-color: #121212;
+}
+
+.container-function {
+  p-speeddial {
+    .p-speeddial {
+      p-button {
+        .p-button {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+          border-radius: 3rem;
+          width: 5rem;
+          height: 5rem;
+          .p-button-icon {
+            font-size: 2rem;
+          }
+          .p-button-label {
+            font-size: .75rem;
+          }
+        }
+      }
+    }
+  }
+  &-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--p-button-info-hover-background);
+    border-radius: 3rem;
+    width: 5rem;
+    height: 5rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--p-button-info-hover-color);
+    i {
+      font-size: 2rem;
+    }
+    span {
+      font-size: .75rem;
+    }
+  }
+}
+
+.container-capture {
+  p-fileupload {
+    .p-fileupload {
+      .p-fileupload-basic-content {
+        p-button {
+          .p-button {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border-radius: 3rem;
+            width: 5rem;
+            height: 5rem;
+            .p-button-icon {
+              font-size: 2.5rem;
+            }
+            .p-button-label {
+              font-size: .75rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

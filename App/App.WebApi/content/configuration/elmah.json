@@ -1,0 +1,10 @@
+{
+  "NotificationForm": {
+    "MailSender": "",
+    "MailRecipient": "",
+    "MailSubjectFormat": ""
+  },
+  "Smtp": {
+    "Host": ""
+  }
+}

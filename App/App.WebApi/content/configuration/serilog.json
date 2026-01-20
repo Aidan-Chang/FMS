@@ -1,0 +1,33 @@
+{
+  "Serilog": {
+    "Using": [ "Serilog.Expressions", "Serilog.Sinks.Console", "Serilog.Sinks.File" ],
+    "MinimumLevel": {
+      "Default": "Information",
+      "Override": {
+        "Microsoft.AspNetCore": "Warning"
+      }
+    },
+    "Enrich": [ "FromLogContext" ],
+    "Filter": [
+      {
+        "Name": "ByIncludingOnly",
+        "Args": {
+          "expression": "RequestPath like '/api/%'"
+        }
+      }
+    ],
+    "WriteTo": [
+      { "Name": "Console" },
+      {
+        "Name": "File",
+        "Args": {
+          "path": "./content/log/.log",
+          "rollingInterval": "Day",
+          "retainedFileCountLimit": 90,
+          "shared": "true",
+          "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact"
+        }
+      }
+    ]
+  }
+}

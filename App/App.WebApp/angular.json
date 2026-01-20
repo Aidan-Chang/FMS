@@ -1,0 +1,368 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "pnpm",
+    "schematicCollections": [
+      "angular-eslint"
+    ],
+    "analytics": false
+  },
+  "newProjectRoot": "svc",
+  "projects": {
+    "fms.app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "app",
+      "sourceRoot": "app/src",
+      "prefix": "f",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "app/src/main.ts",
+            "tsConfig": "app/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "app/public"
+              }
+            ],
+            "styles": [
+              "app/src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/html5-qrcode/html5-qrcode.min.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "fms.app:build:production"
+            },
+            "development": {
+              "buildTarget": "fms.app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "app/**/*.ts",
+              "app/**/*.html"
+            ],
+            "eslintConfig": "app/eslint.config.js"
+          }
+        }
+      }
+    },
+    "fms.svc.core": {
+      "projectType": "library",
+      "root": "svc/core",
+      "sourceRoot": "svc/core/src",
+      "prefix": "f",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "svc/core/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "svc/core/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "svc/core/**/*.ts",
+              "svc/core/**/*.html"
+            ],
+            "eslintConfig": "svc/core/eslint.config.js"
+          }
+        }
+      }
+    },
+    "fms.svc.ux": {
+      "projectType": "library",
+      "root": "svc/ux",
+      "sourceRoot": "svc/ux/src",
+      "prefix": "f",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "svc/ux/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "svc/ux/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "svc/ux/**/*.ts",
+              "svc/ux/**/*.html"
+            ],
+            "eslintConfig": "svc/ux/eslint.config.js"
+          }
+        }
+      }
+    },
+    "fms.svc.mobile": {
+      "projectType": "library",
+      "root": "svc/mobile",
+      "sourceRoot": "svc/mobile/src",
+      "prefix": "f",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "svc/mobile/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "svc/mobile/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "svc/mobile/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "svc/mobile/**/*.ts",
+              "svc/mobile/**/*.html"
+            ],
+            "eslintConfig": "svc/mobile/eslint.config.js"
+          }
+        }
+      }
+    },
+    "fms.lib.sme.account": {
+      "projectType": "library",
+      "root": "lib/sme/account",
+      "sourceRoot": "lib/sme/account/src",
+      "prefix": "f",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "lib/sme/account/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "lib/sme/account/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "lib/sme/account/**/*.ts",
+              "lib/sme/account/**/*.html"
+            ],
+            "eslintConfig": "lib/sme/account/eslint.config.js"
+          }
+        }
+      }
+    },
+    "fms.lib.sme.server": {
+      "projectType": "library",
+      "root": "lib/sme/server",
+      "sourceRoot": "lib/sme/server/src",
+      "prefix": "f",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "lib/sme/server/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "lib/sme/server/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "lib/sme/server/**/*.ts",
+              "lib/sme/server/**/*.html"
+            ],
+            "eslintConfig": "lib/sme/server/eslint.config.js"
+          }
+        }
+      }
+    },
+    "fms.lib.fac.device": {
+      "projectType": "library",
+      "root": "lib/fac/device",
+      "sourceRoot": "lib/fac/device/src",
+      "prefix": "f",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "lib/fac/device/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "lib/fac/device/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "lib/fac/device/**/*.ts",
+              "lib/fac/device/**/*.html"
+            ],
+            "eslintConfig": "lib/fac/device/eslint.config.js"
+          }
+        }
+      }
+    },
+    "fms.lib.fac.maintain": {
+      "projectType": "library",
+      "root": "lib/fac/maintain",
+      "sourceRoot": "lib/fac/maintain/src",
+      "prefix": "f",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "lib/fac/maintain/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "lib/fac/maintain/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "lib/fac/maintain/**/*.ts",
+              "lib/fac/maintain/**/*.html"
+            ],
+            "eslintConfig": "lib/fac/maintain/eslint.config.js"
+          }
+        }
+      }
+    },
+    "fms.tqm.track": {
+      "projectType": "library",
+      "root": "lib/tqm/track",
+      "sourceRoot": "lib/tqm/track/src",
+      "prefix": "p",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "lib/tqm/track/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "lib/tqm/track/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "lib/tqm/track/tsconfig.spec.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "lib/tqm/track/**/*.ts",
+              "lib/tqm/track/**/*.html"
+            ],
+            "eslintConfig": "lib/tqm/track/eslint.config.js"
+          }
+        }
+      }
+    }
+  }
+}

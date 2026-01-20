@@ -1,0 +1,15 @@
+<Project>
+  <PropertyGroup>
+    <VersionPrefix>10.26.1.27</VersionPrefix>
+    <Company>MACHAN</Company>
+    <Description>An Application for Factory Management</Description>
+    <Copyright>Copyright Machan 2026</Copyright>
+    <Product>FMS</Product>
+    <RootNamespace>$(Product).$(MSBuildProjectName)</RootNamespace>
+    <AssemblyName>$(Product).$(MSBuildProjectName)</AssemblyName>
+    <BaseOutputPath>$(SolutionDir)Output/$(MSBuildProjectName)/bin/</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(SolutionDir)Output/$(MSBuildProjectName)/obj</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

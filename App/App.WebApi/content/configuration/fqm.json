@@ -1,0 +1,14 @@
+{
+  "TQM": {
+    "Track": {
+      "Host": "10.1.1.4",
+      "BasePath": "品保",
+      "FolderPath": "總廠品保\\03.成品出貨照片\\成品照片\\工具箱",
+      "Login": {
+        "Domain": "MACHANGP",
+        "User": "RPA",
+        "Password": "9KzZ3VhWGRAZwe"
+      }
+    }
+  }
+}

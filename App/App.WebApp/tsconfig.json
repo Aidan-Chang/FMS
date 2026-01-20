@@ -1,0 +1,59 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "paths": {
+      "@fms/*": [
+        "./*/src/public-api",
+      ],
+    },
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve"
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./app/tsconfig.app.json"
+    },
+    {
+      "path": "./svc/core/tsconfig.lib.json"
+    },
+    {
+      "path": "./svc/ux/tsconfig.lib.json"
+    },
+    {
+      "path": "./svc/mobile/tsconfig.lib.json"
+    },
+    {
+      "path": "./lib/sme/account/tsconfig.lib.json"
+    },
+    {
+      "path": "./lib/sme/server/tsconfig.lib.json"
+    },
+    {
+      "path": "./lib/fac/device/tsconfig.lib.json"
+    },
+    {
+      "path": "./lib/fac/maintain/tsconfig.lib.json"
+    },
+    {
+      "path": "./lib/tqm/track/tsconfig.lib.json"
+    },
+  ]
+}

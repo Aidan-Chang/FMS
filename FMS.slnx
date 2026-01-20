@@ -1,0 +1,29 @@
+<Solution>
+  <Folder Name="/App/">
+    <Project Path="App/App.WebApi/App.WebApi.csproj" />
+    <Project Path="App/App.WebApp/App.WebApp.esproj">
+      <Build />
+      <Deploy />
+    </Project>
+  </Folder>
+  <Folder Name="/Document/" />
+  <Folder Name="/File/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="LICENSE.txt" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/Library/">
+    <Project Path="Library/Lib.Tqm.Track/Lib.Tqm.Track.csproj" Id="6c5f5115-556b-4938-bbd2-b20d814d9b45" />
+  </Folder>
+  <Folder Name="/Service/">
+    <Project Path="Service/Svc.Db.Extension/Svc.Db.Extension.csproj" Id="c72c071c-a084-42f9-a054-a6b85ed6560a" />
+    <Project Path="Service/Svc.File.Smb/Svc.File.Smb.csproj" Id="a703c419-7ff2-4117-8706-552984278825" />
+    <Project Path="Service/Svc.Web.Profiler/Svc.Web.Profiler.csproj" Id="02666847-70fe-4e81-bcb7-f9b4c86b5587" />
+  </Folder>
+  <Folder Name="/Test/">
+    <Project Path="Test/Test.Base/Test.Base/Test.Base.csproj" Id="2dcbc353-2f62-4adc-b96f-6b568ec2703c" />
+  </Folder>
+</Solution>
