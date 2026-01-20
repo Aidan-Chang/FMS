@@ -1,0 +1,8 @@
+{
+  "Jwt": {
+    "Key": "VjajaEyIchihVYpHupKaITOFiaCaGuvHvdrapLvEbxgMiavYLQpLFaHyUAgHwaqSQaaliaTcbnNatSmmWBKgRcyb",
+    "Authority": "machan.local",
+    "Audience": "machan.local",
+    "Issuer": "machan.local"
+  }
+}

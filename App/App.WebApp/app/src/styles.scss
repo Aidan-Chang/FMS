@@ -1,0 +1,27 @@
+@import '@fontsource-variable/material-symbols-outlined/index.css';
+@import "@fortawesome/fontawesome-free/css/all.css";
+@import "primeicons/primeicons.css";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Verdana", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  overflow: hidden;
+  a, a:link, a:visited, a:focus, a:hover, a:active {
+    text-decoration: none;
+  }
+}
+
+.mso {
+  font-family: 'Material Symbols Outlined Variable', sans-serif;
+  font-style: normal;
+  font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 64;
+}
+
+html.app-dark {
+  background-color: #121212;
+}

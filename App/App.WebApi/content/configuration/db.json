@@ -1,0 +1,9 @@
+{
+  "data": {
+    "migration": false
+  },
+  "ContentDbPath": "../database/db.mdf",
+  "ConnectionStrings": {
+    "default": "Server=(localdb)\\MSSQLLocalDB;AttachDbFileName=%ContentDbPath%;Initial Catalog=FMS;Integrated Security=True;Connect Timeout=30"
+  }
+}
